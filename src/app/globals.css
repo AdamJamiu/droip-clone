@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@config "../../tailwind.config.ts";
+
+.bg-purple {
+    background: rgba(86, 65, 243, 1.00);
+}
+
+.nav-border-color {
+    border-color: rgba(86, 65, 243, 0.2);
+}
