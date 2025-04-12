@@ -19,48 +19,59 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 export interface INavLinks {
   name: string;
   icon: string | StaticImport;
+  description: string;
 }
 
 export const products_link: INavLinks[] = [
   {
     name: "Editor",
     icon: editor_icon,
+    description: "Effective Visual Builder",
   },
   {
     name: "Interaction & Animation",
     icon: interaction_animation_icon,
+    description: "Design interactive websites",
   },
   {
     name: "Grids & Layouts",
     icon: grid_layout_icon,
+    description: "Structure more easily",
   },
   {
     name: "Media Manager",
     icon: media_manager_icon,
+    description: "Manage & edit sites assets",
   },
   {
     name: "Typography",
     icon: typography_icon,
+    description: "Customize your branding",
   },
   {
     name: "Form Builder",
     icon: form_builder_icon,
+    description: "Optimize your SEO workflow",
   },
   {
     name: "Accessibility",
     icon: accessibility_icon,
+    description: "Acessible to everyone",
   },
   {
     name: "Pop-up Builder",
     icon: pop_up_builder_icon,
+    description: "Build pop-ups visually",
   },
   {
     name: "Figma to Droip",
     icon: figma_icon,
+    description: "Turn static designs into live websites",
   },
   {
     name: "Content Management",
     icon: content_management_icon,
+    description: "Centralize dynamic content management",
   },
 ];
 
@@ -68,13 +79,34 @@ export const resources_link: INavLinks[] = [
   {
     name: "Droip Blogs",
     icon: droip_blogs_icon,
+    description: "Explore what's happening",
   },
   {
     name: "Documentation",
     icon: documentation_icon,
+    description: "Learn from documentation",
   },
   {
     name: "Release Notes",
     icon: release_notes_icon,
+    description: "Check what's new",
+  },
+];
+
+export const support: INavLinks[] = [
+  {
+    name: "Get Support",
+    icon: droip_blogs_icon,
+    description: "Fix your issues with our experts",
+  },
+  {
+    name: "Feature Request",
+    icon: documentation_icon,
+    description: "Let us know what's missing",
+  },
+  {
+    name: "Contact",
+    icon: release_notes_icon,
+    description: "Contact for query",
   },
 ];

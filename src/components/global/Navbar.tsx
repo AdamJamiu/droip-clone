@@ -5,9 +5,10 @@ import Link from "next/link";
 import AnimatedHamburger from "./AnimatedHamburger";
 import { Dispatch, SetStateAction, useState } from "react";
 import Accordion from "../Accordion";
-import { products_link, resources_link } from "@/data/navbar";
+import { products_link, resources_link, support } from "@/data/navbar";
 import logo from "../../assets/images/droip-logo.svg";
 import NavMenu from "../NavMenu";
+import useScrollDirection from "@/hooks/useScrollDirection";
 
 interface IMobileNav {
   isOpen: boolean;
@@ -16,10 +17,15 @@ interface IMobileNav {
 
 const Navbar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const isNavOpen = useScrollDirection();
 
   return (
     <nav className="w-full font-inter relative">
-      <div className="flex justify-between items-center px-10 md:px-20 lg:px-28 py-4 text-[15px] h-16 fixed top-0 right-0 left-0 lg:bg-transparent bg-white z-[100]">
+      <div
+        className={`${
+          isNavOpen ? "translate-y-0 z-[100]" : "-translate-y-full -z-[90]"
+        } flex justify-between items-center ease transition-all duration-500 px-10 md:px-20 lg:px-28 py-4 text-[15px] h-16 fixed top-0 right-0 left-0 bg-white lg:bg-[#F5F5F7]`}
+      >
         <div className="w-full flex justify-start items-center gap-10 xl:gap-14">
           <Image src={logo} alt="droip logo" height={20} width={60} />
 
@@ -33,6 +39,7 @@ const Navbar = () => {
 
             <NavMenu label="Product" data={products_link} />
             <NavMenu label="Resources" data={resources_link} />
+            <NavMenu label="Support" data={support} />
 
             <Link
               href="#"
@@ -96,7 +103,7 @@ const MobileNav = ({ isOpen, setIsOpen }: IMobileNav) => {
 
         <Accordion label="Product" data={products_link} />
         <Accordion label="Resources" data={resources_link} />
-        <Accordion label="Support" data={products_link} />
+        <Accordion label="Support" data={support} />
 
         <Link
           onClick={onClose}
